@@ -1,0 +1,30 @@
+{
+  "phase": 3,
+  "development_cohort": "adni",
+  "external_cohort_lock": "oasis3",
+  "primary_horizons_months": [12, 36],
+  "sensitivity_horizons_months": [24, 60],
+  "days_per_month": 30.4375,
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "ridge_penalty_grid": [0.01, 0.1, 1.0, 10.0, 100.0],
+  "ridge_selection_rule": "largest penalty within one standard error of best mean validation partial log-likelihood",
+  "bootstrap_replicates": 1000,
+  "bootstrap_unit": "participant",
+  "random_seed": 20260728,
+  "cif_grid_points": 10,
+  "probability_sum_tolerance": 1e-10,
+  "d1_equivalence_tolerance_partial_loglik": 0.001,
+  "benchmark_scope": "baseline_B1_only",
+  "benchmark_dynamic_exclusion_reason": "Available survival benchmark estimators do not support participant-normalized training weights or clustered variance for repeated landmarks; baseline-only benchmarking is the prespecified permitted restriction.",
+  "model_selection_hierarchy": [
+    "leakage_free",
+    "calibration",
+    "integrated_brier",
+    "outer_fold_stability",
+    "coefficient_stability",
+    "transportability",
+    "discrimination",
+    "parsimony"
+  ]
+}

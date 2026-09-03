@@ -1,0 +1,47 @@
+{
+  "repair_name": "Outcome-blind Phase 3 lock repair",
+  "output_directory": "models/phase3/phase4_lock_v2",
+  "original_lock_directory": "models/phase3/phase4_lock",
+  "development_cohort": "ADNI",
+  "external_cohort": "OASIS-3",
+  "external_participant_level_access_allowed": false,
+  "models_to_fit": {
+    "D0": [
+      12,
+      36
+    ],
+    "B3": [
+      12,
+      36
+    ],
+    "D3": [
+      12,
+      36
+    ]
+  },
+  "models_to_verified_copy": {
+    "B1": [
+      12,
+      24,
+      36,
+      60
+    ],
+    "D1": [
+      12,
+      24,
+      36,
+      60
+    ]
+  },
+  "held_out_fixture_outer_fold": 0,
+  "fixture_rows_per_model": 20,
+  "prediction_tolerance": 1e-12,
+  "immutable_rules": [
+    "Never modify models/phase3/phase4_lock.",
+    "Fit missing models using ADNI only.",
+    "Recover penalties from saved Phase 3 participant-grouped nested-validation results.",
+    "Do not retune or select models using new performance exploration.",
+    "Do not access OASIS-3 participant-level features or outcomes.",
+    "Do not resume Phase 4 automatically."
+  ]
+}

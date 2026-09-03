@@ -1,0 +1,79 @@
+{
+  "phase": 4,
+  "analysis_name": "Locked OASIS-3 External Validation",
+  "development_cohort": "ADNI",
+  "external_validation_cohort": "OASIS-3",
+  "repaired_lock_directory": "models/phase3/phase4_lock_v2",
+  "primary_endpoint_source": "CDRTOT de facto global CDR",
+  "primary_horizons_months": [
+    12,
+    36
+  ],
+  "sensitivity_horizons_months": [
+    24,
+    60
+  ],
+  "required_frozen_primary_models": {
+    "B1": [
+      12,
+      24,
+      36,
+      60
+    ],
+    "D0": [
+      12,
+      36
+    ],
+    "D1": [
+      12,
+      24,
+      36,
+      60
+    ]
+  },
+  "required_frozen_sensitivity_models": {
+    "B3_no_apoe": [
+      12,
+      36
+    ],
+    "D3_strictly_lagged_mmse": [
+      12,
+      36
+    ]
+  },
+  "conditional_frozen_sensitivity_models": {
+    "B2_no_mmse": [
+      12,
+      36
+    ],
+    "D2_no_mmse": [
+      12,
+      36
+    ]
+  },
+  "participant_bootstrap_replicates": 1000,
+  "recalibration_cross_validation_folds": 5,
+  "integrated_brier_grid_points": 20,
+  "d1_requires_observed_current_and_change_mmse": true,
+  "primary_figure_dpi": 600,
+  "complex_figure_dpi": 1200,
+  "transportability_rules": {
+    "calibration_oe_acceptable_lower": 0.8,
+    "calibration_oe_acceptable_upper": 1.25,
+    "calibration_slope_acceptable_lower": 0.8,
+    "calibration_slope_acceptable_upper": 1.2,
+    "maximum_acceptable_median_auc_degradation": 0.1,
+    "minimum_acceptable_external_auc": 0.6,
+    "not_transportable_auc_floor": 0.55
+  },
+  "random_seed": 20260728,
+  "probability_sum_tolerance": 1e-10,
+  "immutable_rules": [
+    "Do not modify Phase 2 model-ready data.",
+    "Do not modify frozen Phase 3 artifacts.",
+    "Do not access OASIS-3 outcomes until the frozen package is complete and all Stage A critical checks pass.",
+    "Save and hash outcome-hidden predictions before any outcome merge.",
+    "Freeze untouched external results before recalibration or endpoint sensitivity.",
+    "Do not begin Phase 5 automatically."
+  ]
+}

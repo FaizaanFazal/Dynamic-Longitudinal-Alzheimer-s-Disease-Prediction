@@ -1,0 +1,61 @@
+{
+  "phase": 2,
+  "random_seed": 20260723,
+  "days_per_month": 30.4375,
+  "days_per_year": 365.25,
+  "primary_horizons_months": [12, 36],
+  "sensitivity_horizons_months": [24, 60],
+  "baseline_measurement_window_days": 180,
+  "dynamic_measurement_window_days": 180,
+  "slope_minimum_separation_days": 90,
+  "primary_landmark_minimum_interval_days": 90,
+  "landmark_interval_sensitivities_days": [0, 30, 90],
+  "outer_folds": 5,
+  "candidate_outer_folds": [5, 4],
+  "inner_folds": 5,
+  "valid_cdr_values": [0, 0.5, 1, 2, 3],
+  "valid_mmse_range": [0, 30],
+  "valid_age_range": [18, 110],
+  "valid_education_range": [0, 40],
+  "valid_apoe_e4_dose": [0, 1, 2],
+  "outcome_codes": {
+    "transition_to_cdr_0": 0,
+    "remain_cdr_0_5_through_horizon": 1,
+    "transition_to_cdr_ge1": 2,
+    "censored_before_horizon": null,
+    "unresolved_conflict": null
+  },
+  "clinical_core_continuous_features": [
+    "age_at_landmark",
+    "education_years",
+    "apoe_e4_dose",
+    "current_mmse",
+    "elapsed_years_from_index"
+  ],
+  "clinical_core_categorical_features": ["sex"],
+  "primary_dynamic_features": [
+    "age_at_landmark",
+    "sex",
+    "education_years",
+    "apoe_e4_dose",
+    "current_mmse",
+    "mmse_change_from_index",
+    "elapsed_years_from_index"
+  ],
+  "secondary_dynamic_features": [
+    "previous_mmse",
+    "time_since_previous_mmse_years",
+    "mmse_slope_per_year",
+    "prior_mmse_count"
+  ],
+  "preprocessing": {
+    "primary_imputation": "median_continuous_and_most_frequent_categorical",
+    "continuous_scaling": "robust_scaler",
+    "categorical_encoding": "one_hot_ignore_unknown",
+    "winsorization": "disabled_primary_optional_training_fold_only",
+    "multiple_imputation": "compatible_secondary_not_fitted_in_phase2"
+  },
+  "external_endpoint_status": "usable_with_provisional_export_mapping",
+  "external_endpoint_field": "CDRTOT",
+  "external_endpoint_interpretation": "de_facto_global_cdr_in_delivered_oasis3_export"
+}

@@ -1,0 +1,142 @@
+# =============================================================================
+# PRIVACY BOUNDARY
+# ADNI, OASIS-3, and AIBL data are governed/restricted and must not be committed.
+# This file intentionally favors preventing disclosure over repository convenience.
+# =============================================================================
+
+# Restricted source datasets and generated participant-level data
+[Dd]atasets/
+[Pp]rocessed[Dd]ata/
+processed_data/
+derived_data/
+intermediate_data/
+LiteratureAndPlan
+
+# Reports, result tables, evidence synthesis, and fitted artifacts
+# These may contain row-level values, predictions, paths, or restricted metadata.
+[Rr]eports/
+[Rr]esults/*
+[Mm]odels/
+evidenceBOOK/
+artifacts/
+outputs/
+
+# Reviewed aggregate figures are safe to publish. Result tables remain ignored.
+!/results/plots/
+
+# These Phase 3 trajectory exports disclose actual ADNI participant numbers.
+/results/plots/phase3/dynamic_risk_trajectories.png
+/results/plots/phase3/dynamic_risk_trajectories.svg
+
+# Result-bearing synthesis documents outside the reports directory
+/LiteratureAndPlan/Plan.md
+/LiteratureAndPlan/Complete_Project_Results_Synthesis.md
+**/demographics_report*.md
+
+# Notebooks with saved participant identifiers or participant-level table previews.
+# Aggregate-only notebooks are intentionally allowed for reproducible reporting.
+/notebooks/DataExploration/adni/01_adni_demographics.ipynb
+/notebooks/DataExploration/aibl/03_aibl_demographics.ipynb
+/notebooks/DataExploration/oasis3/02_oasis3_demographics.ipynb
+/notebooks/Phase1/Phase1_DataFoundationAndEndpointValidation.ipynb
+/notebooks/Phase2/Phase2_LandmarksMissingnessAndHarmonization.ipynb
+/notebooks/Phase3/Phase3_ADNIModelDevelopmentAndInternalValidation.ipynb
+/notebooks/Phase5/Phase5_SecondaryAnalysesAndFinalReporting.ipynb
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Tabular, statistical, array, database, and serialized data formats
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.xlsb
+*.ods
+*.parquet
+*.feather
+*.arrow
+*.sas7bdat
+*.xpt
+*.dta
+*.sav
+*.por
+*.jsonl
+*.ndjson
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.mat
+*.pkl
+*.pickle
+*.joblib
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Medical and neuroimaging data formats
+*.nii
+*.nii.gz
+*.dcm
+*.dicom
+*.mgh
+*.mgz
+*.nrrd
+*.edf
+
+# Archives and compressed exports
+*.zip
+*.zip.*
+*.tar
+*.tar.gz
+*.tgz
+*.tbz
+*.tbz2
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+
+# Python environments, caches, build outputs, and test artifacts
+clinical_env/
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Logs, temporary files, editor state, and operating-system metadata
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

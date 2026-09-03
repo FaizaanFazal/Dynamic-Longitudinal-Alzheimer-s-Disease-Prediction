@@ -1,0 +1,23 @@
+# Core data processing
+numpy
+pandas
+scipy
+pyarrow
+openpyxl
+
+# Statistics and machine learning
+scikit-learn
+scikit-survival
+statsmodels
+
+# Visualization and clinical-data exploration
+matplotlib
+seaborn
+plotly
+missingno
+tabulate
+
+# Notebook environment
+jupyterlab
+notebook
+ipykernel

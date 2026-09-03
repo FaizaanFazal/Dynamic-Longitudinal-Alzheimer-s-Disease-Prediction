@@ -1,0 +1,39 @@
+{
+  "phase": "phase_1_data_foundation_and_endpoint_validation",
+  "state_mapping": {
+    "0": 0,
+    "0.5": 1,
+    ">=1": 2
+  },
+  "state_1_label": "CDR 0.5 or MCI-like cognitive staging",
+  "index_definition": "First eligible CDR 0.5 visit with no prior CDR >=1",
+  "mmse_baseline_window_days": 180,
+  "manifest_same_visit_match_tolerance_days": 30,
+  "near_duplicate_days": 7,
+  "minimum_transition_separation_days": [30, 90],
+  "prediction_horizons_months": [12, 24, 36, 60],
+  "days_per_month": 30.4375,
+  "valid_cdr_values": [0, 0.5, 1, 2, 3],
+  "valid_mmse_range": [0, 30],
+  "valid_age_range": [18, 110],
+  "primary_cohorts": ["adni", "oasis3"],
+  "exploratory_cohorts": ["aibl"],
+  "primary_clinical_core": [
+    "age_at_visit",
+    "sex",
+    "education_years",
+    "apoe_e4_dose",
+    "mmse",
+    "time_since_index_months"
+  ],
+  "prohibited_primary_predictors": [
+    "cdr_sum_boxes",
+    "cdr_domain_scores",
+    "future_cdr",
+    "future_mmse",
+    "final_diagnosis",
+    "total_follow_up",
+    "future_visit_count"
+  ],
+  "random_seed": 20260722
+}
